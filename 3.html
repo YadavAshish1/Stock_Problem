@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function factorial(n) {
+            let res = 1;
+            for (let i = 1; i <= n; ++i) {
+                res *= i;
+            }
+            return res;
+        }
+        function binomialCoeff(n, k) {
+            let res = 1;
+
+            if (k > n - k)
+                k = n - k;
+
+            for (let i = 0; i < k; ++i) {
+                res *= (n - i);
+                res /= (i + 1);
+            }
+            return res;
+        }
+        function catalan(n) {
+            let c = binomialCoeff(2 * n, n);
+            return c / (n + 1);
+        }
+        function countBST(n) {
+
+            let count = catalan(n);
+
+            return count;
+        }
+        let count1, count2, n = 3;
+
+        count1 = countBST(n);
+       
+        document.write("Count of BST with " +
+            n + " nodes is " +
+            count1 + "</br>");
+    </script>
+
+</body>
+
+</html>
